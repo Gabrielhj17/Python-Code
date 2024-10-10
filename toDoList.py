@@ -46,10 +46,14 @@ def deleteItem():
     itemToDelete = int(input("What would you like to remove from the list? ")) - 1  
     if 0 <= itemToDelete < len(tasks):  
         tasks.pop(itemToDelete)
-        print("Task removed successfully, new list of tasks as follows:")
+        if len(tasks) == 0:
+            print("There are no tasks on the list")
+            menu()
+        else:
+            print("Task removed successfully, new list of tasks as follows:")
     else:
         print("Invalid input. Please try again.")
-        return
+        deleteItem()
 
     taskItem = 1
     for task in tasks:
