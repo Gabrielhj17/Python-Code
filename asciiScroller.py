@@ -11,4 +11,4 @@ for letter in target:
         if I == letter:
             result += I
             break
-        time.sleep(0.005)
+        time.sleep(0.01)
