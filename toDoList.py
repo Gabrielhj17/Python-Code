@@ -8,7 +8,7 @@ def menu():
     print("3. View all tasks")
     print("4. Exit")
     selection = int(input("Choose an option of 1 through 4: "))
-
+    print("")
     switchboard(selection)
     return selection
 
@@ -63,6 +63,9 @@ def deleteItem():
         menu()
 
 def viewItems():
+    if len(tasks) == 0:
+        print("There are no tasks on the list, please add some before viewing")
+        menu()
     taskItem = 1
     for task in tasks:
         print(f"{taskItem}. {task}")  
